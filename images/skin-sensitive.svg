@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A9C4A3"/><stop offset="1" stop-color="#3E7060"/></linearGradient></defs><rect width="300" height="400" fill="url(#g)"/><circle cx="250" cy="60" r="90" fill="#fff" opacity=".08"/><circle cx="30" cy="330" r="110" fill="#fff" opacity=".07"/>
+<g transform="translate(150 175)" fill="#fff" opacity=".92">
+<ellipse rx="22" ry="62" cy="-62"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(45)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(90)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(135)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(180)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(225)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(270)"/><ellipse rx="22" ry="62" cy="-62" transform="rotate(315)"/>
+</g>
+<circle cx="150" cy="175" r="30" fill="#E8C766"/>
+<circle cx="150" cy="175" r="30" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>
+<path d="M150 245 C150 300 130 330 120 360" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round" opacity=".6"/>
+</svg>

@@ -205,6 +205,65 @@ h1, h2, h3, h4 { font-family: "Noto Serif TC", serif; line-height: 1.4; }
 .float-top { bottom: 16px; background: var(--clay); font-size: 20px; }
 .float-top:hover { background: var(--clay-dark); }
 
+/* ===== Icon 美化 ===== */
+.topbar a i { margin-right: 2px; opacity: .85; }
+.cart-link i { font-size: 15px; }
+.btn i, .contact-btns a i { margin-right: 4px; }
+.quick .ico {
+  width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--mist); color: var(--forest); font-size: 22px; transition: .2s;
+}
+.quick a:hover .ico { background: var(--forest); color: #fff; }
+.sec-head h2 > i { color: var(--moss); font-size: .8em; margin-right: 4px; }
+.skin { flex-direction: column; justify-content: flex-end; gap: 8px; }
+.skin { position: relative; overflow: hidden; }
+.skin img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.skin::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(35, 70, 64, .75), transparent 55%); }
+.skin span { position: relative; z-index: 1; text-shadow: 0 1px 4px rgba(0, 0, 0, .25); }
+.skin:hover img { transform: scale(1.06); }
+.story-art { flex-direction: column; gap: 10px; }
+.story-art i { font-size: 40px; opacity: .8; }
+.footer p > i { width: 20px; color: var(--moss); text-align: center; margin-right: 4px; }
+.footer p { margin-bottom: 6px; }
+.float-line { font-size: 24px; }
+.float-top { font-size: 18px; }
+
+.menu > li > a i { margin-right: 4px; color: var(--mist); font-size: .9em; transition: transform .2s; }
+.menu > li:hover > a i { transform: scale(1.2); color: #fff; }
+.mega h4 i { margin-right: 4px; color: var(--clay); }
+
+/* ===== 互動效果（輕柔、自然） ===== */
+:target { scroll-margin-top: 16px; }
+section[id] { scroll-margin-top: 20px; }
+
+/* 按鈕與連結：滑過變色 */
+.btn, .search button, .contact-btns a, .quick a, .social a, .skin, .card, .topbar a, .menu > li > a, .submenu li a, .float-line, .float-top {
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.btn:hover, .contact-btns a:hover { box-shadow: 0 4px 12px rgba(199, 125, 91, .35); }
+.contact-btns a:hover { box-shadow: 0 4px 12px rgba(47, 93, 80, .3); }
+.card:hover, .social a:hover, .skin:hover, .quick a:hover { box-shadow: 0 8px 22px rgba(47, 93, 80, .18); }
+.social a:hover { color: var(--forest); }
+.float-line:hover { background: #05a847; transform: translateY(-2px); }
+.float-top:hover { transform: translateY(-2px); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.card:hover .thumb img { transform: scale(1.04); }
+.card.featured .thumb img { object-fit: contain; }
+.card .btn { white-space: nowrap; padding-left: 8px; padding-right: 8px; font-size: 14px; }
+
+/* 往下捲動：區塊淡入（瀏覽器不支援時直接顯示，不影響內容） */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@supports (animation-timeline: view()) {
+  .quick, .section, .story-inner, .footer-grid {
+    animation: fade-up linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
 /* ===== RWD：平板 ===== */
 @media (max-width: 1024px) {
   .products { grid-template-columns: repeat(3, 1fr); }
@@ -286,6 +345,7 @@ h1, h2, h3, h4 { font-family: "Noto Serif TC", serif; line-height: 1.4; }
 
 /* 減少動態偏好 */
 @media (prefers-reduced-motion: reduce) {
-  .slides, .dots i { animation: none; }
+  .slides, .dots i, .quick, .section, .story-inner, .footer-grid { animation: none; }
+  * { transition: none !important; }
   html { scroll-behavior: auto; }
 }
