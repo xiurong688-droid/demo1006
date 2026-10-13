@@ -1,6 +1,6 @@
 $root = (Resolve-Path "$PSScriptRoot\..").Path
 $l = New-Object System.Net.HttpListener
-$l.Prefixes.Add("http://localhost:8080/")
+$l.Prefixes.Add("http://localhost:8090/")
 $l.Start()
 $types = @{ ".html"="text/html; charset=utf-8"; ".css"="text/css; charset=utf-8"; ".js"="text/javascript"; ".png"="image/png"; ".jpg"="image/jpeg"; ".svg"="image/svg+xml" }
 while ($l.IsListening) {
